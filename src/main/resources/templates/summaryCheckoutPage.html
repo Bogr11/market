@@ -18,7 +18,6 @@
 			<ul th:each="product, stat : ${recipe.productList}" class="col-sm-12">
 				<li><span th:text="${stat.count}"></span></li>
 				<li>Product name: <span th:text="${product.title}"></span></li>
-				<li>Discount : <span th:text="${product.discountFor2Products}"></span>%</li>
 				<li>Actual price: <span th:text="${product.priceAfterDiscount}"></span></li>
 			</ul>
 			<p>Grand Total: <span th:text="${recipe.grandTotal}"></span></p>
