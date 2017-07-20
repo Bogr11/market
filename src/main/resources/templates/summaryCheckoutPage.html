@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="layout/default">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Summary Page</title>
+</head>
+<body>
+<div layout:fragment="content" class="container">
+	<div class="row">
+		<h1>Summary Page</h1>
+		<p><a th:href="@{/}">Home Page</a></p>
+		<p><a th:href="@{/create}">Create Product Page</a></p>
+		<p><a th:href="@{/multiple-checkout}">Buy Products Page</a></p>
+		<h1>Recipe</h1>
+		<div th:if="${recipe != null}">
+			<ul th:each="product, stat : ${recipe.productList}" class="col-sm-12">
+				<li><span th:text="${stat.count}"></span></li>
+				<li>Product name: <span th:text="${product.title}"></span></li>
+				<li>Discount : <span th:text="${product.discountFor2Products}"></span>%</li>
+				<li>Actual price: <span th:text="${product.priceAfterDiscount}"></span></li>
+			</ul>
+			<p>Grand Total: <span th:text="${recipe.grandTotal}"></span></p>
+		</div>
+	</div>
+</div>
+</body>
+</html>

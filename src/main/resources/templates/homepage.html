@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="layout/default">
+<head>
+	<meta charset="UTF-8"/>
+	<title>Home Page</title>
+</head>
+<body>
+<div layout:fragment="content" class="container">
+	<h1>Home Page</h1>
+	<p><a th:href="@{/}">Home Page</a></p>
+	<p><a th:href="@{/create}">Create Product Page</a></p>
+	<p><a th:href="@{/multiple-checkout}">Buy Products Page</a></p>
+</div>
+</body>
+</html>
